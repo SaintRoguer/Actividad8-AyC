@@ -15,9 +15,12 @@ fun main() {
         val y = Random.nextFloat() + Random.nextInt(100)
         arregloPuntos.add(Punto(x,y))
     }
-        val test = PuntoMasCercano()
-        val parPuntos = test.fuerzaBrutaPMC(arregloPuntos)
-        println(parPuntos[0].toString())
-        println(parPuntos[1].toString())
+    for(index in arregloPuntos)
+        println(index.toString())
+
+    val test = PuntoMasCercano()
+    val parPuntos = test.fuerzaBrutaPMC(arregloPuntos)
+    println("punto inicial: "+parPuntos[0].toString())
+    println("punto final: "+parPuntos[1].toString())
 
 }

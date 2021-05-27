@@ -11,7 +11,7 @@ class PuntoMasCercano {
         var puntoFinal = Punto(Float.MAX_VALUE, Float.MAX_VALUE)
         for(index in lista.indices){
             var distanciaActual = 0f
-            for(i in index+1 .. lista.size){
+            for(i in index+1 .. lista.size-1){
                 if(lista.lastIndex != index)
                     distanciaActual = distanciaEntreDosPuntos(lista[index],lista[i])
                 if(distanciaActual<distancia) {
