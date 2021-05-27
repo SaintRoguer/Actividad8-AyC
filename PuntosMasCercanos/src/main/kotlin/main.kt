@@ -1,7 +1,7 @@
 import kotlin.random.Random
-import PuntoMasCercano
 
-fun main(args: Array<String>) {
+
+fun main() {
     var cantPuntos = -1
     while(cantPuntos>1000000000 || cantPuntos<0) {
         println("Ingrese la cantidad de puntos")
@@ -16,6 +16,8 @@ fun main(args: Array<String>) {
         arregloPuntos.add(Punto(x,y))
     }
         val test = PuntoMasCercano()
-        val puntoA,puntoB = test.fuerzaBrutaPMC(arregloPuntos)
-        println(puntoA.toString(),puntoB.toString())
+        val parPuntos = test.fuerzaBrutaPMC(arregloPuntos)
+        println(parPuntos[0].toString())
+        println(parPuntos[1].toString())
+
 }

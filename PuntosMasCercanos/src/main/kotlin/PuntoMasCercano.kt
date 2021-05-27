@@ -5,13 +5,13 @@ class PuntoMasCercano {
 
 
 
-    public fun fuerzaBrutaPMC(lista: List<Punto>): Punto,Punto{
+    fun fuerzaBrutaPMC(lista: List<Punto>): List<Punto>{
         var distancia = Float.MAX_VALUE
         var puntoInicial = Punto(Float.MAX_VALUE, Float.MAX_VALUE)
         var puntoFinal = Punto(Float.MAX_VALUE, Float.MAX_VALUE)
         for(index in lista.indices){
             var distanciaActual = 0f
-            for(i in index+1 .. lista.size)
+            for(i in index+1 .. lista.size){
                 if(lista.lastIndex != index)
                     distanciaActual = distanciaEntreDosPuntos(lista[index],lista[i])
                 if(distanciaActual<distancia) {
@@ -19,8 +19,12 @@ class PuntoMasCercano {
                     puntoInicial = lista[index]
                     puntoFinal = lista[i]
                 }
+            }
         }
-        return puntoInicial,puntoFinal
+        val puntosMasCercanos = mutableListOf<Punto>()
+        puntosMasCercanos.add(puntoInicial)
+        puntosMasCercanos.add(puntoFinal)
+        return puntosMasCercanos
     }
 
     private fun distanciaEntreDosPuntos(punto1: Punto ,punto2: Punto):Float =
