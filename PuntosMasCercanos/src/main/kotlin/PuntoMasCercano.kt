@@ -1,3 +1,6 @@
+package main.kotlin
+
+import Punto
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -27,7 +30,7 @@ class PuntoMasCercano {
         return puntosMasCercanos
     }
 
-    private fun distanciaEntreDosPuntos(punto1: Punto ,punto2: Punto):Float =
+    private fun distanciaEntreDosPuntos(punto1: Punto, punto2: Punto):Float =
         sqrt(
             (punto1.x.toDouble() - punto2.x.toDouble()).pow(2.0) +
                     (punto1.y.toDouble() - punto2.y.toDouble()).pow(2.0)
