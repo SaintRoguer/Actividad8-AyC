@@ -1,5 +1,5 @@
 import kotlin.random.Random
-
+import PuntoMasCercano
 
 fun main(args: Array<String>) {
     var cantPuntos = -1
@@ -15,6 +15,7 @@ fun main(args: Array<String>) {
         val y = Random.nextFloat() + Random.nextInt(100)
         arregloPuntos.add(Punto(x,y))
     }
-    for(index in arregloPuntos)
-        println(index.toString())
+        val test = PuntoMasCercano()
+        val puntoA,puntoB = test.fuerzaBrutaPMC(arregloPuntos)
+        println(puntoA.toString(),puntoB.toString())
 }
