@@ -1,6 +1,3 @@
-package main.kotlin
-
-import Punto
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -10,11 +7,17 @@ class PuntoMasCercano {
 
     fun fuerzaBrutaPMC(lista: List<Punto>): List<Punto>{
         var distancia = Float.MAX_VALUE
-        var puntoInicial = Punto(Float.MAX_VALUE, Float.MAX_VALUE)
-        var puntoFinal = Punto(Float.MAX_VALUE, Float.MAX_VALUE)
+        var puntoInicial = Punto(0f, 0f)
+        var puntoFinal = Punto(0f, 0f)
+        if(lista.size == 1) {
+            distancia = 0f
+            puntoFinal = lista.first()
+            puntoInicial = lista.first()
+        }
+        else
         for(index in lista.indices){
             var distanciaActual = 0f
-            for(i in index+1 .. lista.size-1){
+            for(i in index+1 until lista.size){
                 if(lista.lastIndex != index)
                     distanciaActual = distanciaEntreDosPuntos(lista[index],lista[i])
                 if(distanciaActual<distancia) {
