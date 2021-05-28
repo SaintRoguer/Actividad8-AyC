@@ -3,8 +3,6 @@ import kotlin.math.sqrt
 
 class PuntoMasCercano {
 
-
-
     fun fuerzaBrutaPMC(lista: List<Punto>): List<Punto>{
         var distancia = Double.MAX_VALUE
         var puntoInicial = Punto(0.0, 0.0)
@@ -36,7 +34,7 @@ class PuntoMasCercano {
     private fun distanciaEntreDosPuntos(punto1: Punto, punto2: Punto): Double =
         sqrt(
             (punto1.x.toDouble() - punto2.x.toDouble()).pow(2.0) +
-                    (punto1.y.toDouble() - punto2.y.toDouble()).pow(2.0)
+               (punto1.y.toDouble() - punto2.y.toDouble()).pow(2.0)
         )
 
 }
