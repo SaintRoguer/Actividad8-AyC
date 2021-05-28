@@ -3,6 +3,39 @@ import kotlin.math.sqrt
 
 class PuntoMasCercano {
 
+    fun dycPMCsinOrdenamiento(puntos: List<Punto>): List<Punto>{
+        var pmc = listOf<Punto>()
+        if (puntos.size <= 8){ //esta condicion se deberia cumplir a la primera division????
+            pmc = fuerzaBrutaPMC(puntos)
+        }
+        else
+        {
+            val puntosIzq = puntos.subList(0,puntos.size/2)
+            val puntosDer = puntos.subList((puntos.size/2)+1,puntos.size)
+            dycPMCsinOrdenamiento(puntosIzq)
+            dycPMCsinOrdenamiento(puntosDer)
+            // pmc = algoritmo de merge, lo picante
+        }
+        return pmc
+
+    }
+    fun dycPMCconOrdenamiento(puntos: List<Punto>): List<Punto>{
+        var pmc = listOf<Punto>()
+        puntos = puntos.sortedWith()
+        if (puntos.size <= 8){ //esta condicion se deberia cumplir a la primera division????
+            pmc = fuerzaBrutaPMC(puntos)
+        }
+        else
+        {
+            val puntosIzq = puntos.subList(0,puntos.size/2)
+            val puntosDer = puntos.subList((puntos.size/2)+1,puntos.size)
+            dycPMCsinOrdenamiento(puntosIzq)
+            dycPMCsinOrdenamiento(puntosDer)
+            // pmc = algoritmo de merge, lo picante
+        }
+        return pmc
+
+    }
     fun fuerzaBrutaPMC(lista: List<Punto>): List<Punto>{
         var distancia = Double.MAX_VALUE
         var puntoInicial = Punto(0.0, 0.0)
