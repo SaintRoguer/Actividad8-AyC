@@ -44,7 +44,7 @@ fun main() {
     val tiempoInicial3 = System.nanoTime()
     val parPuntos3 = test.dycPMCconOrdenamiento(arregloPuntos)
     val tiempoFinal3 = System.nanoTime()-tiempoInicial3
-    println("Tiempo de ejecucion del algoritmo 1: $tiempoFinal3")
+    println("Tiempo de ejecucion del algoritmo 3: $tiempoFinal3")
     println("Puntos y distancia Minima: $parPuntos3")
 
 }
