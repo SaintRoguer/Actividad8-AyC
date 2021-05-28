@@ -28,9 +28,23 @@ fun main() {
 
     val test = PuntoMasCercano()
     val tiempoInicial = System.nanoTime()
-    val parPuntos = test.dycPMCsinOrdenamientoY(arregloPuntos)
+    val parPuntos = test.fuerzaBrutaPMC(arregloPuntos)
     val tiempoFinal = System.nanoTime()-tiempoInicial
-    println("Tiempo de ejecucion: $tiempoFinal")
-    println("Distancia Minima: $parPuntos")
+    println("Tiempo de ejecucion del algoritmo 1: $tiempoFinal")
+    println("Puntos y distancia Minima: $parPuntos")
+    println()
+    println()
+    val tiempoInicial2 = System.nanoTime()
+    val parPuntos2 = test.dycPMCsinOrdenamientoY(arregloPuntos)
+    val tiempoFinal2 = System.nanoTime()-tiempoInicial2
+    println("Tiempo de ejecucion del algoritmo 2: $tiempoFinal2")
+    println("Puntos y distancia Minima: $parPuntos2")
+    println()
+    println()
+    val tiempoInicial3 = System.nanoTime()
+    val parPuntos3 = test.dycPMCconOrdenamiento(arregloPuntos)
+    val tiempoFinal3 = System.nanoTime()-tiempoInicial3
+    println("Tiempo de ejecucion del algoritmo 1: $tiempoFinal3")
+    println("Puntos y distancia Minima: $parPuntos3")
 
 }
