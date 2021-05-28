@@ -1,8 +1,11 @@
+import org.jetbrains.annotations.TestOnly
 import kotlin.math.pow
 import kotlin.math.sqrt
 
 class PuntoMasCercano {
-
+   // @Rule
+   // val benchmarkRule = BenchmarkRule()
+    @TestOnly
     fun dycPMCsinOrdenamiento(puntos: List<Punto>): List<Punto>{
         var pmc = listOf<Punto>()
         if (puntos.size <= 8){ //esta condicion se deberia cumplir a la primera division????
@@ -21,7 +24,7 @@ class PuntoMasCercano {
     }
     fun dycPMCconOrdenamiento(puntos: List<Punto>): List<Punto>{
         var pmc = listOf<Punto>()
-        puntos = puntos.sortedWith()
+        // puntos = puntos.sortedWith(ComparadorPunto<Punto>)
         if (puntos.size <= 8){ //esta condicion se deberia cumplir a la primera division????
             pmc = fuerzaBrutaPMC(puntos)
         }
