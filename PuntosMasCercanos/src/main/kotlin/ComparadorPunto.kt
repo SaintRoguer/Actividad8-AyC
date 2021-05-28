@@ -1,15 +1,11 @@
-class ComparadorPunto<Punto>() :Comparator<Punto>{
-    override fun compare(o1: Punto, o2: Punto): Int {
-        var ret = -1;
+class ComparadorPunto{
 
-        //if(o1.x>o2.x) {
-            ret = 1
-       // }
-       // else
-       //     if(o1.x==o2.x) {
-                ret = 0
-        //    }
-        return ret
+    companion object : Comparator<Punto> {
+        override fun compare(o1: Punto, o2: Punto): Int = when{
+            o1.x > o2.x -> 1
+            o1.x == o2.x -> 0
+            else -> -1
+        }
+
     }
-
 }
