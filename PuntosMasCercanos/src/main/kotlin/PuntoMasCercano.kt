@@ -113,10 +113,12 @@ class PuntoMasCercano {
 
     fun fuerzaBrutaPMC(lista: List<Punto>): PuntosYDistancia{
         var distancia = Double.MAX_VALUE
-        var puntosYDistancia = PuntosYDistancia(Punto(-1.0,-1.0),Punto(-1.0,-1.0),0.0)
+        val puntosYDistancia = PuntosYDistancia(Punto(-1.0,-1.0),Punto(-1.0,-1.0),0.0)
         if(lista.isNotEmpty()) {
             if (lista.size == 1) {
-                puntosYDistancia = PuntosYDistancia(lista[0], lista[0], 0.0)
+                puntosYDistancia.puntoUno = lista[0]
+                puntosYDistancia.puntoDos = lista[0]
+                puntosYDistancia.distancia = 0.0
             } else
                 for (index in lista.indices) {
                     var distanciaActual = 0.0
