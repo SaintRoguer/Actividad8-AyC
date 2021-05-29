@@ -23,7 +23,7 @@ fun main() {
         val y = (Random.nextDouble(maxRange))
         arregloPuntos.add(Punto(x, y))
     }
-    for(index in arregloPuntos)
+   for(index in arregloPuntos)
         println(index.toString())
 
     val test = PuntoMasCercano()
